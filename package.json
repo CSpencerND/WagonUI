@@ -1,18 +1,52 @@
 {
-    "name": "wagonui",
+    "name": "@cspencernd/wagonui",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/cspencernd"
+    },
     "version": "0.0.1",
     "description": "React / Nextjs component library intended for use with a shopify headless storefront",
-    "main": "index.js",
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "author": "Christopher Spencer @ https://github.com/CSpencerND",
+    "license": "MIT",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "rollup": "rollup -c"
+    },
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "sideEffects": false,
+    "keywords": [
+        "rollup",
+        "javascript",
+        "library",
+        "esm"
+    ],
+    "types": "dist/index.d.ts",
+    "dependencies": {
+        "@babel/runtime": "^7.17.9"
     },
     "devDependencies": {
+        "@rollup/plugin-alias": "^5.0.0",
+        "@rollup/plugin-babel": "^6.0.3",
+        "@rollup/plugin-commonjs": "^25.0.0",
+        "@rollup/plugin-node-resolve": "^15.0.2",
+        "@rollup/plugin-terser": "^0.4.1",
+        "@rollup/plugin-typescript": "^11.1.1",
+        "eslint": "^8.39.0",
+        "eslint-plugin-react": "^7.32.2",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.2",
         "@shopify/hydrogen-react": "^2023.4.0",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "@tailwindcss/forms": "^0.5.3",
@@ -27,6 +61,7 @@
         "daisyui": "^2.51.6",
         "framer-motion": "^10.12.10",
         "hamburger-react": "^2.5.0",
+        "jest-environment-jsdom": "^29.5.0",
         "lucide-react": "^0.216.0",
         "next": "^13.4.2",
         "postcss": "^8.4.23",
@@ -38,10 +73,26 @@
         "react-responsive-masonry": "^2.1.7",
         "react-spinners": "^0.13.8",
         "react-toastify": "^9.1.2",
+        "rollup": "^3.21.7",
+        "rollup-plugin-dts": "^5.3.0",
+        "rollup-plugin-analyzer": "^4.0.0",
+        "rollup-plugin-preserve-directives": "^0.1.1",
         "tailwind-merge": "^1.12.0",
         "tailwindcss": "^3.3.2",
         "tailwindcss-animate": "^1.0.5",
+        "tslib": "^2.5.0",
         "type-fest": "^3.10.0",
         "typescript": "5.1.0-beta"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "next": "^13.4.2"
+    },
+    "engines": {
+        "node": ">=16.0.0 || >=18.0.0 || >=19.0.0 || >=20.0.0"
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": "npm run lint",
+        "*.{js,ts,tsx,css,md}": "npm run format"
     }
 }
