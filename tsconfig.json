@@ -10,12 +10,12 @@
         "module": "ESNext",
         "declaration": true,
         "sourceMap": true,
-        "declarationDir": "dist/types",
+        "declarationDir": "types",
         "outDir": "dist",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
-        "emitDeclarationOnly": true,
-
+        "noUncheckedIndexedAccess": true,
+        "noEmit": true,
         "plugins": [
             {
                 "name": "next"

@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url"
 import { createRequire } from "node:module"
 
 import typescript from "@rollup/plugin-typescript"
+import postcss from "rollup-plugin-postcss"
 import alias from "@rollup/plugin-alias"
 import babel from "@rollup/plugin-babel"
 import commonjs from "@rollup/plugin-commonjs"
@@ -71,7 +72,7 @@ const config = {
         }),
         nodeResolve({ extensions: [".mjs", ".js", ".jsx", ".json", ".node", ".ts", ".tsx"] }),
         commonjs({ include: ["node_modules/**"] }),
-        typescript(),
+        typescript({ tsconfig: "./tsconfig.json" }),
         babel({
             babelHelpers: "runtime",
             exclude: /node_modules/,
@@ -88,6 +89,7 @@ const config = {
             limit: 0,
             summaryOnly: true,
         }),
+        postcss()
     ],
     // Ignore warnings when using "use client" directive
     onwarn(warning, warn) {
