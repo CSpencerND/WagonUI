@@ -14,12 +14,12 @@ type CardRootProps = HTMLMotionProps<"div"> & SurfaceVariants & Partial<Componen
 
 const baseClasses = "relative overflow-hidden rounded-3xl shadow-lg"
 
-const CardRoot = forwardRef<HTMLDivElement, CardRootProps>(({ className, href, glass, surface, ...props }, ref) => {
+const CardRoot = forwardRef<HTMLDivElement, CardRootProps>(({ className, href, glass, blur, surface, ...props }, ref) => {
     if (!href) {
         return (
             <MotionCardDiv
                 ref={ref}
-                className={cn(baseClasses, surfaces({ className, glass }))}
+                className={cn(baseClasses, surfaces({ className, glass, blur }))}
                 {...props}
             />
         )
@@ -27,7 +27,7 @@ const CardRoot = forwardRef<HTMLDivElement, CardRootProps>(({ className, href, g
     return (
         <MotionCardLink
             href={href}
-            className={cn(baseClasses, "block [&_h3]:text-primary-content", surfaces({ className, glass }))}
+            className={cn(baseClasses, "block [&_h3]:text-primary-content", surfaces({ className, glass, blur }))}
             {...props}
         />
     )
