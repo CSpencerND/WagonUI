@@ -5,3 +5,7 @@ pnpm-lock.yaml
 tsconfig.json
 vite.config.ts
 .vscode
+.storybook
+.eslintrc
+next-env.d.ts
+next.config.js
