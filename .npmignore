@@ -6,6 +6,6 @@ tsconfig.json
 vite.config.ts
 .vscode
 .storybook
-.eslintrc
+.eslintrc.json
 next-env.d.ts
 next.config.js

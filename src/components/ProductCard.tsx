@@ -1,11 +1,12 @@
 import * as React from "react"
 
 import { Card } from "@/primitives"
+
 import type { ComponentProps } from "react"
 
 type CardProps = ComponentProps<typeof Card.Figure> & ComponentProps<typeof Card.Root>
 
-export function ProductCard({ image, title, href }: CardProps) {
+export function ProductCard({ image, title, href, className }: CardProps) {
     return (
         <Card.Root
             surface="main"
@@ -16,6 +17,7 @@ export function ProductCard({ image, title, href }: CardProps) {
             <Card.Figure
                 image={image}
                 title={title}
+                className={className}
             />
             <Card.Footer
                 overlay

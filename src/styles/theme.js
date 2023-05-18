@@ -95,8 +95,6 @@ module.exports = {
         "base-200": zinc.z800,
         "base-300": "#000000",
 
-        ".surface": { backgroundColor: zinc.z800 },
-
         info: "hsl(170, 79%, 43%)",
         success: "hsl(145, 70%, 46%)",
         warning: "hsl(49, 88%, 49%)",

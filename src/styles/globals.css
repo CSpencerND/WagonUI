@@ -17,6 +17,14 @@
         @apply rounded-xl;
     }
 
+    .btn-navigation {
+        @apply btn btn-primary bg-primary/50 text-primary-content;
+    }
+
+    .btn-action {
+        @apply btn btn-secondary bg-secondary/50 text-secondary-content;
+    }
+
     .input {
         @apply rounded-xl;
     }

@@ -92,6 +92,23 @@ module.exports = {
         rtl: false,
         prefix: "",
         darkTheme: "dark",
-        themes: [{ ...require("./src/styles/theme") }, "dark", "light"],
+        themes: [
+            { ...require("./src/styles/theme") },
+            "night",
+            "winter",
+            {
+                testTheme: {
+                    primary: "#0ea5e9",
+                    secondary: "#6366f1",
+                    accent: "#e879f9",
+                    neutral: "#4b5563",
+                    "base-100": "#111827",
+                    info: "#2dd4bf",
+                    success: "#4ade80",
+                    warning: "#facc15",
+                    error: "#f87171",
+                },
+            },
+        ],
     },
 }
