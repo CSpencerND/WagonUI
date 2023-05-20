@@ -93,7 +93,8 @@ module.exports = {
         "neutral-focus": zinc.z500,
         "base-100": zinc.z700,
         "base-200": zinc.z800,
-        "base-300": "#000000",
+        "base-300": zinc.z950,
+        // "base-300": "#000000",
 
         info: "hsl(170, 79%, 43%)",
         success: "hsl(145, 70%, 46%)",

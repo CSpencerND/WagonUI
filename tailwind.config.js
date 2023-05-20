@@ -1,4 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+const zinc = {
+    z50: "rgb(250, 250, 250)",
+    z100: "rgb(244, 244, 245)",
+    z200: "rgb(228, 228, 231)",
+    z300: "rgb(212, 212, 216)",
+    z400: "rgb(161, 161, 170)",
+    z500: "rgb(113, 113, 122)",
+    z600: "rgb(82, 82, 91)",
+    z700: "rgb(63, 63, 70)",
+    z800: "rgb(39, 39, 42)",
+    z900: "rgb(24, 24, 27)",
+    z950: "rgb(9, 9, 11)",
+}
 module.exports = {
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -64,6 +77,7 @@ module.exports = {
         require("@tailwindcss/forms"),
         require("@tailwindcss/aspect-ratio"),
         require("tailwindcss-animate"),
+        require("@headlessui/tailwindcss")({ prefix: "ui" }),
 
         function ({ addComponents }) {
             addComponents({
@@ -77,7 +91,7 @@ module.exports = {
                         height: "100%",
                         width: "100%",
                         borderRadius: "inherit",
-                        backdropFilter: "blur(10px) saturate(1.8)",
+                        backdropFilter: "blur(16px) saturate(1.8)",
                     },
                 },
             })
@@ -94,7 +108,6 @@ module.exports = {
         darkTheme: "dark",
         themes: [
             { ...require("./src/styles/theme") },
-            "night",
             "winter",
             {
                 testTheme: {
@@ -107,6 +120,16 @@ module.exports = {
                     success: "#4ade80",
                     warning: "#facc15",
                     error: "#f87171",
+                },
+            },
+            {
+                night: {
+                    ...require("daisyui/src/colors/themes")["[data-theme=night]"],
+                    neutral: zinc.z600,
+                    "neutral-focus": zinc.z500,
+                    "base-100": zinc.z700,
+                    "base-200": zinc.z800,
+                    "base-300": zinc.z950,
                 },
             },
         ],

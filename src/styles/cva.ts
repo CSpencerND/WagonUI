@@ -3,9 +3,9 @@ import { cva, type VariantProps } from "class-variance-authority"
 export const surfaces = cva("", {
     variants: {
         surface: {
-            shell: "bg-base-300/60",
-            main: "bg-base-200/60",
-            detail: "bg-base-100/60",
+            shell: "bg-base-300",
+            main: "bg-base-200",
+            detail: "bg-base-100",
         },
         blur: {
             true: "bg-blur",
@@ -19,17 +19,17 @@ export const surfaces = cva("", {
         {
             surface: "shell",
             blur: true,
-            class: "before:bg-base-300/[22.36%]",
+            class: "before:bg-base-300/60",
         },
         {
             surface: "main",
             blur: true,
-            class: "before:bg-base-200/[22.36%]",
+            class: "before:bg-base-200/60",
         },
         {
             surface: "detail",
             blur: true,
-            class: "before:bg-base-100/[22.36%]",
+            class: "before:bg-base-100/60",
         },
     ],
 })

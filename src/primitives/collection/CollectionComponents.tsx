@@ -40,7 +40,7 @@ const CollectionHeader = forwardRef<HTMLDivElement, CollectionHeaderProps>(
             className={cn("prose mt-4 max-w-prose-narrow prose-headings:mb-4", className)}
             {...props}
         >
-            <h1 className="text-accent-content max-sm:text-3xl">{collectionTitle}</h1>
+            <h1 className="text-accent max-sm:text-3xl">{collectionTitle}</h1>
 
             {collectionDescription && (
                 <aside

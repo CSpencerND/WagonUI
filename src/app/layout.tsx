@@ -1,7 +1,9 @@
 import * as React from "react"
 
-import "@/styles/globals.css"
+import { AppShell } from "@/components"
 import { Inter } from "next/font/google"
+
+import "@/styles/globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -12,8 +14,15 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" data-theme="night">
-            <body className={inter.className}>{children}</body>
+        <html
+            lang="en"
+            data-theme="night"
+            className={inter.className}
+        >
+            <body>
+                <AppShell />
+                {children}
+            </body>
         </html>
     )
 }

@@ -3,12 +3,12 @@ import * as React from "react"
 import { MotionCardDiv, MotionCardLink } from "@/motion"
 
 import { cn } from "@/lib"
-import { forwardRef } from "react"
 import { surfaces } from "@/styles/cva"
+import { forwardRef } from "react"
 
+import type { SurfaceVariants } from "@/styles/cva"
 import type { HTMLMotionProps } from "framer-motion"
 import type { ComponentPropsWithoutRef } from "react"
-import type { SurfaceVariants } from "@/styles/cva"
 
 type CardRootProps = HTMLMotionProps<"div"> & SurfaceVariants & Partial<ComponentPropsWithoutRef<typeof MotionCardLink>>
 
