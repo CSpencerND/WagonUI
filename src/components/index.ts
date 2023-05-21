@@ -1,4 +1,5 @@
 export { AppShell } from "./AppShell"
 export { CollectionShowcase } from "./CollectionShowcase"
+export { Dropdown } from "./Dropdown"
+export { MobileNavigation } from "./MobileNavigation"
 export { ProductCard } from "./ProductCard"
-

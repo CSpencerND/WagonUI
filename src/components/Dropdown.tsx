@@ -13,7 +13,7 @@ import { surfaces } from "@/styles/cva"
 import type { SurfaceVariants } from "@/styles/cva"
 
 type DropdownProps = {
-    links: {
+    linkData: {
         title: string
         href: string
     }[]
@@ -23,11 +23,11 @@ type DropdownProps = {
 
 const MenuItems = motion(Menu.Items)
 
-export function Dropdown({ links, title, surface, blur, className }: DropdownProps) {
+export function Dropdown({ linkData, title, surface, blur, className }: DropdownProps) {
     return (
         <Menu
             as="div"
-            className="relative inline-block text-left"
+            className="relative inline-block text-left max-lg:hidden"
         >
             {({ open }) => (
                 <>
@@ -60,8 +60,8 @@ export function Dropdown({ links, title, surface, blur, className }: DropdownPro
                                     surfaces({ surface, blur, className })
                                 )}
                             >
-                                {links &&
-                                    links.map((l, i) => (
+                                {linkData &&
+                                    linkData.map((l, i) => (
                                         <Menu.Item
                                             key={i}
                                             as="li"

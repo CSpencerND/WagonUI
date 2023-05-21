@@ -6,6 +6,7 @@ export const surfaces = cva("", {
             shell: "bg-base-300",
             main: "bg-base-200",
             detail: "bg-base-100",
+            frosted: "before:bg-zinc-100/60 bg-blur",
         },
         blur: {
             true: "bg-blur",

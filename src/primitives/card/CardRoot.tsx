@@ -27,7 +27,7 @@ const CardRoot = forwardRef<HTMLDivElement, CardRootProps>(({ className, href, g
     return (
         <MotionCardLink
             href={href}
-            className={cn(baseClasses, "block [&_h3]:text-primary-content", surfaces({ className, glass, blur }))}
+            className={cn(baseClasses, "block [&_h3]:text-primary", surfaces({ className, glass, blur }))}
             {...props}
         />
     )

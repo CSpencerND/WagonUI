@@ -1,7 +1,7 @@
 import * as React from "react"
 
+import { Dropdown, MobileNavigation } from "@/components"
 import { Navbar } from "@/primitives"
-import { Dropdown } from "@/components/Dropdown"
 
 const links: { title: string; href: string }[] = [
     {
@@ -42,15 +42,16 @@ export function AppShell() {
                 </Navbar.Start>
                 <Navbar.End>
                     <Dropdown
-                        links={links}
+                        linkData={links}
                         title="Collections"
                         surface="shell"
                         blur
                     />
-                    <button className="btn-ghost btn">account</button>
+                    {/* <button className="btn-ghost btn">account</button> */}
                     <button className="btn-ghost btn">cart</button>
                 </Navbar.End>
             </Navbar.Content>
+            <MobileNavigation linkData={links} />
         </Navbar.Root>
     )
 }
