@@ -1,6 +1,6 @@
 {
   "name": "@cspencernd/wagonui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React / Nextjs component library intended for use with a shopify headless storefront",
   "author": "Christopher Spencer - github.com/cspencernd",
   "license": "MIT",

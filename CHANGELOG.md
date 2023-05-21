@@ -1,5 +1,11 @@
 # @cspencernd/wagonui
 
+## 0.0.7
+
+### Patch Changes
+
+-   init card component
+
 ## 0.0.6
 
 ### Patch Changes
