@@ -9,7 +9,7 @@ import watermelon from "./fruit-8.jpeg"
 
 import type { Image as TImage } from "@shopify/hydrogen-react/storefront-api-types"
 
-type Fruit = Omit<TImage, "originalSrc" | "src" | "transformedSrc"> & {
+type Fruit = TImage & {
     title: string
 }
 
@@ -20,6 +20,9 @@ export const fruits: Fruit[] = [
         altText: "orange",
         height: orange.height,
         width: orange.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
     {
         url: tangerine.src,
@@ -27,6 +30,9 @@ export const fruits: Fruit[] = [
         altText: "tangerine",
         height: tangerine.height,
         width: tangerine.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
     {
         url: cherry.src,
@@ -34,6 +40,9 @@ export const fruits: Fruit[] = [
         altText: "cherry",
         height: cherry.height,
         width: cherry.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
     {
         url: lemon.src,
@@ -41,6 +50,9 @@ export const fruits: Fruit[] = [
         altText: "lemon",
         height: lemon.height,
         width: lemon.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
     {
         url: avocado.src,
@@ -48,6 +60,9 @@ export const fruits: Fruit[] = [
         altText: "avocado",
         height: avocado.height,
         width: avocado.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
     {
         url: lemon2.src,
@@ -55,6 +70,9 @@ export const fruits: Fruit[] = [
         altText: "lemon2",
         height: lemon2.height,
         width: lemon2.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
     {
         url: banana.src,
@@ -62,6 +80,9 @@ export const fruits: Fruit[] = [
         altText: "banana",
         height: banana.height,
         width: banana.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
     {
         url: watermelon.src,
@@ -69,5 +90,8 @@ export const fruits: Fruit[] = [
         altText: "watermelon",
         height: watermelon.height,
         width: watermelon.width,
+        originalSrc: "",
+        src: "",
+        transformedSrc: ""
     },
 ]

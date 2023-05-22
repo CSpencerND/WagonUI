@@ -1,5 +1,11 @@
 # @cspencernd/wagonui
 
+## 0.0.10
+
+### Patch Changes
+
+-   add footer, product store, and root provider
+
 ## 0.0.9
 
 ### Patch Changes

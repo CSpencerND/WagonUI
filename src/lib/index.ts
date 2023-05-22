@@ -5,4 +5,4 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
 }
 
-export { useLoader, useHydrated } from "./state"
+export { ProductProvider, RootProvider, useHydrated, useLoader, useProductStore } from "./state"
