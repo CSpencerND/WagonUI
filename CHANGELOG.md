@@ -1,5 +1,11 @@
 # @cspencernd/wagonui
 
+## 0.0.8
+
+### Patch Changes
+
+-   add hero and featured
+
 ## 0.0.7
 
 ### Patch Changes

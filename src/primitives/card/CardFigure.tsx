@@ -5,13 +5,13 @@ import NextImage, { ImageProps } from "next/image"
 import { forwardRef } from "react"
 import { cn } from "@/lib"
 
-import type { Image as TShopImage } from "@shopify/hydrogen-react/storefront-api-types"
+import type { Image as TShopImage, Maybe } from "@shopify/hydrogen-react/storefront-api-types"
 import type { HTMLAttributes } from "react"
 
 type NextImageProps = Omit<ImageProps, "src" | "alt">
 
 type FigureProps = NextImageProps & {
-    image: Partial<TShopImage>
+    image: Maybe<TShopImage> | undefined
     title?: string
 } & HTMLAttributes<HTMLElement>
 
@@ -19,7 +19,7 @@ const CardFigure = forwardRef<HTMLImageElement, FigureProps>(({ children, classN
     return (
         <figure className="max-h-full">
             {children}
-            {image.url ? (
+            {image && image.url ? (
                 <NextImage
                     ref={ref}
                     src={image.url}
