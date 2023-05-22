@@ -1,9 +1,10 @@
 "use client"
 
-import * as React from "react"
 import Link from "next/link"
+import * as React from "react"
 
 // import Product from "@/components/product"
+import { Figure, Title } from "@/primitives"
 import { Popover } from "@headlessui/react"
 import { CartLineQuantity, CartLineQuantityAdjustButton, Money, useCartLine } from "@shopify/hydrogen-react"
 import { Minus, Plus } from "lucide-react"
@@ -62,12 +63,12 @@ function CartLine({ className }: ClassName) {
                 },
             }}
         >
-            <Image
+            <CartLineImage
                 image={image!}
                 title={productTitle}
                 productURL={productURL}
             />
-            <Body
+            <CartLineBody
                 productTitle={productTitle}
                 variantTitle={variantTitle}
                 productURL={productURL}
@@ -77,24 +78,24 @@ function CartLine({ className }: ClassName) {
     )
 }
 
-function Image({ image, title, productURL }: ImageProps) {
+function CartLineImage({ image, title, productURL }: ImageProps) {
     return (
         <Popover.Button as={Fragment}>
             <Link
                 href={productURL}
                 className="w-2/5 sm:w-1/4"
             >
-                {/* <Product.Image.Static */}
-                {/*     imageClassName="rounded-2xl sm:rounded-3xl" */}
-                {/*     image={image} */}
-                {/*     title={title} */}
-                {/* /> */}
+                <Figure
+                    image={image}
+                    title={title}
+                    className="rounded-2xl sm:rounded-3xl"
+                />
             </Link>
         </Popover.Button>
     )
 }
 
-function Body({ productTitle, variantTitle, productURL, price, className }: BodyProps) {
+function CartLineBody({ productTitle, variantTitle, productURL, price, className }: BodyProps) {
     return (
         <div className={cn("card-body w-3/5 p-0 text-xs sm:w-3/4 sm:text-base", className)}>
             <div className="flex justify-between">
@@ -103,11 +104,10 @@ function Body({ productTitle, variantTitle, productURL, price, className }: Body
                         href={productURL}
                         className="w-full text-primary-content"
                     >
-                        {/* <Product.Title */}
-                        {/*     title={productTitle} */}
-                        {/*     truncate */}
-                        {/*     className="text-sm sm:text-base" */}
-                        {/* /> */}
+                        <Title
+                            title={productTitle}
+                            className="text-sm sm:text-base"
+                        />
                     </Link>
                 </Popover.Button>
             </div>

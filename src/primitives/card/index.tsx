@@ -15,4 +15,4 @@ Card.Title = CardTitle
 Card.Figure = CardFigure
 Card.Footer = CardFooter
 
-export { Card }
+export { Card, CardFigure as Figure, CardTitle as Title }
