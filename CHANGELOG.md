@@ -1,5 +1,11 @@
 # @cspencernd/wagonui
 
+## 0.0.9
+
+### Patch Changes
+
+-   add loading spinners
+
 ## 0.0.8
 
 ### Patch Changes
