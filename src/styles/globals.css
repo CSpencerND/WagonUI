@@ -43,12 +43,12 @@
 }
 
 html {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden bg-base-300;
 }
 
 body {
     min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     grid-template-columns: repeat(1, minmax(0, 1fr));

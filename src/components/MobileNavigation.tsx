@@ -22,9 +22,9 @@ const transition: Transition = {
 } as const
 
 export function MobileNavigation({ linkData }: { linkData: LinkData[] }) {
-    const links = linkData.map((link) => (
+    const links = linkData.map((link, i) => (
         <Link
-            key={link.href}
+            key={i}
             href={link.href}
             className="text-base font-semibold ui-active:bg-primary/30 ui-active:text-primary"
         >

@@ -1,37 +1,38 @@
 import * as React from "react"
 
-import { MotionCardDiv, MotionCardLink } from "@/motion"
+import Link from "next/link"
 
 import { cn } from "@/lib"
 import { surfaces } from "@/styles/cva"
 import { forwardRef } from "react"
 
 import type { SurfaceVariants } from "@/styles/cva"
-import type { HTMLMotionProps } from "framer-motion"
-import type { ComponentPropsWithoutRef } from "react"
 
-type CardRootProps = HTMLMotionProps<"div"> & SurfaceVariants & Partial<ComponentPropsWithoutRef<typeof MotionCardLink>>
+type CardRootProps = React.ComponentProps<"div"> & React.ComponentProps<typeof Link> & SurfaceVariants
 
-const baseClasses = "relative overflow-hidden rounded-3xl shadow-lg"
+const CardRoot = forwardRef<HTMLElement, CardRootProps>(
+    ({ className, href, glass, blur, surface, ...props }, ref) => {
+        const baseClasses = "relative overflow-hidden rounded-3xl shadow-lg"
 
-const CardRoot = forwardRef<HTMLDivElement, CardRootProps>(({ className, href, glass, blur, surface, ...props }, ref) => {
-    if (!href) {
+        if (!href) {
+            return (
+                <div
+                    ref={ref as React.Ref<HTMLDivElement>}
+                    className={cn(baseClasses, surfaces({ className, glass, blur }))}
+                    {...props}
+                />
+            )
+        }
         return (
-            <MotionCardDiv
-                ref={ref}
-                className={cn(baseClasses, surfaces({ className, glass, blur }))}
+            <Link
+                ref={ref as React.Ref<HTMLAnchorElement>}
+                href={href}
+                className={cn(baseClasses, "block [&_h3]:text-primary", surfaces({ className, glass, blur }))}
                 {...props}
             />
         )
     }
-    return (
-        <MotionCardLink
-            href={href}
-            className={cn(baseClasses, "block [&_h3]:text-primary", surfaces({ className, glass, blur }))}
-            {...props}
-        />
-    )
-})
+)
 CardRoot.displayName = "CardRoot"
 
 export { CardRoot }

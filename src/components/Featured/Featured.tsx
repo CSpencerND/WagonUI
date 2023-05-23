@@ -4,8 +4,9 @@ import { ProductCard } from "@/components"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import AliceCarousel from "react-alice-carousel"
+import { HashLoader } from "react-spinners"
 
-import { useHydrated, useLoader } from "@/lib/state"
+import { useHydrated } from "@/lib"
 import { useMountEffect } from "@react-hookz/web"
 import { useWindowSize } from "@react-hookz/web/esm/useWindowSize"
 import { useRef, useState } from "react"
@@ -25,8 +26,17 @@ export function FeaturedCollection({ featured, collectionHandle }: FeaturedProps
     const width = useWindowSize(undefined, true).width
     const autoplay: boolean = useHydrated()
 
-    const { toggleLoading, LoadingSpinner } = useLoader()
-    const [items, setItems] = useState<JSX.Element[]>([<LoadingSpinner />])
+    const [isLoading, setLoading] = useState<boolean>(true)
+    const [items, setItems] = useState<JSX.Element[]>([
+        <HashLoader
+            loading={isLoading}
+            color="#00aaff"
+            size={96}
+            className="mx-auto h-fit max-h-full"
+            aria-label="Loading Spinner"
+            data-testid="loader"
+        />,
+    ])
 
     useMountEffect(() => {
         const items = featured.map((product) => {
@@ -43,7 +53,7 @@ export function FeaturedCollection({ featured, collectionHandle }: FeaturedProps
             )
         })
         setItems(items)
-        toggleLoading()
+        setLoading(false)
     })
 
     return (
