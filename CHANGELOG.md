@@ -1,5 +1,11 @@
 # @cspencernd/wagonui
 
+## 0.0.12
+
+### Patch Changes
+
+-   add color swatch
+
 ## 0.0.11
 
 ### Patch Changes

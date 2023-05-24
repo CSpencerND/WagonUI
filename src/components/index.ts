@@ -1,6 +1,7 @@
 export { AppShell } from "./AppShell"
 export { Cart } from "./Cart"
 export { CollectionShowcase } from "./CollectionShowcase"
+export { ColorSwatch } from "./ColorSwatch"
 export { Dropdown } from "./Dropdown"
 export { FeaturedCollection } from "./Featured"
 export { Gallery } from "./Gallery"
