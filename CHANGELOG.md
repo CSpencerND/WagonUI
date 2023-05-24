@@ -1,5 +1,11 @@
 # @cspencernd/wagonui
 
+## 0.1.0
+
+### Minor Changes
+
+-   add product primitive and rearrange others
+
 ## 0.0.13
 
 ### Patch Changes

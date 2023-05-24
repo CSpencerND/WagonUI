@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { CollectionShowcase, ColorSwatch, ProductCard } from "@/components"
+import { CollectionShowcase, ProductCard } from "@/components"
 import { CollectionItem } from "@/primitives"
 
 import { fruits } from "../assets"
