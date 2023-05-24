@@ -8,7 +8,7 @@ import { forwardRef } from "react"
 
 import type { SurfaceVariants } from "@/styles/cva"
 
-type CardRootProps = React.ComponentProps<"div"> & React.ComponentProps<typeof Link> & SurfaceVariants
+type CardRootProps = React.ComponentProps<"div"> & Partial<React.ComponentProps<typeof Link>> & SurfaceVariants
 
 const CardRoot = forwardRef<HTMLDivElement | HTMLAnchorElement, CardRootProps>(
     ({ className, href, glass, blur, surface, ...props }, ref) => {
