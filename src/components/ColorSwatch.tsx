@@ -47,9 +47,10 @@ const ColorSwatch = ({ blur, glass, surface, className, ...props }: ColorsSwatch
                         value={colorOptions![i]}
                         className={cn(
                             `
-                            h-7 w-7 flex-none rounded-full
+                            h-7 w-7 flex-none cursor-pointer rounded-full
                             outline outline-2 outline-current
                             transition-[outline-offset]`,
+                            "md:h-10 md:w-10",
                             "focus:z-10 focus-visible:bg-opacity-75",
                             "data-[state=checked]:outline-offset-2"
                         )}
