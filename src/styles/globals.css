@@ -54,7 +54,7 @@ body {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 
     padding-bottom: env(safe-area-inset-bottom); /* ios */
-    @apply relative isolate bg-base-300 text-sm;
+    @apply relative isolate bg-base-300 text-sm space-y-12;
 }
 
 body::before {

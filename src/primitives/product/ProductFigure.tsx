@@ -15,8 +15,6 @@ export function ProductFigure(props: ProductFigureProps) {
         <Card.Figure
             image={image}
             {...props}
-        >
-            ProductFigure
-        </Card.Figure>
+        />
     )
 }

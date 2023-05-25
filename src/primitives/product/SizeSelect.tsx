@@ -32,7 +32,7 @@ const SizeSelect = ({ blur, glass, surface, className, ...props }: SizeSelectPro
             onValueChange={handleChange}
             className={cn(
                 "relative flex w-full flex-wrap space-x-2 overflow-x-scroll rounded-3xl p-2",
-                "focus-within:ring-2 focus-within:ring-offset-2",
+                // "focus-within:ring-2 focus-within:ring-offset-2",
                 surfaces({ blur, surface, glass, className })
             )}
             aria-label="Select a size"
@@ -46,12 +46,11 @@ const SizeSelect = ({ blur, glass, surface, className, ...props }: SizeSelectPro
                         className={cn(
                             `
                             grid h-7 w-7 flex-none cursor-pointer place-items-center
-                            rounded-sq bg-base-100 text-sm shadow-lg
-                            outline outline-2 outline-current
+                            rounded-sq bg-base-100 text-sm shadow-lg ring-current
                             transition-all duration-200`,
                             "md:h-10 md:w-10",
-                            "focus:z-10 focus-visible:bg-opacity-75",
-                            "data-[state=checked]:outline-offset-2"
+                            "focus:z-10 focus-visible:ring-offset-1",
+                            "data-[state=checked]:ring-1"
                         )}
                     >
                         {sizeText[size]}

@@ -33,8 +33,7 @@ const ColorSwatch = ({ blur, glass, surface, className, ...props }: ColorsSwatch
             value={selectedColor}
             onValueChange={handleChange}
             className={cn(
-                "relative flex w-full space-x-2 overflow-x-scroll rounded-3xl p-2",
-                "focus-within:ring-2 focus-within:ring-offset-2",
+                "relative flex w-full space-x-2 overflow-x-scroll rounded-3xl p-3",
                 surfaces({ blur, surface, glass, className })
             )}
             aria-label="Select a color"
@@ -48,10 +47,10 @@ const ColorSwatch = ({ blur, glass, surface, className, ...props }: ColorsSwatch
                         className={cn(
                             `
                             h-7 w-7 flex-none cursor-pointer rounded-full
-                            outline outline-2 outline-current
+                            outline outline-1 outline-current
                             transition-[outline-offset]`,
                             "md:h-10 md:w-10",
-                            "focus:z-10 focus-visible:bg-opacity-75",
+                            "focus:z-10 focus-visible:outline-2",
                             "data-[state=checked]:outline-offset-2"
                         )}
                         style={{

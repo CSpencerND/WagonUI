@@ -6,7 +6,7 @@ const CollectionRoot = React.forwardRef<HTMLDivElement, React.ComponentProps<"se
     ({ className, ...props }, ref) => (
         <section
             ref={ref}
-            className={cn("mx-auto max-w-2xl space-y-8", className)}
+            className={cn("container mx-auto max-w-prose-narrow md:max-w-prose-wide space-y-8", className)}
             {...props}
         />
     )

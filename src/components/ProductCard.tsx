@@ -9,7 +9,6 @@ type CardProps = ComponentProps<typeof Card.Figure> & ComponentProps<typeof Card
 export function ProductCard({ image, title, href, className }: CardProps) {
     return (
         <Card.Root
-            surface="main"
             glass
             blur
             href={href}

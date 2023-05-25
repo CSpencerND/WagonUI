@@ -18,7 +18,7 @@ const CardRoot = forwardRef<HTMLDivElement | HTMLAnchorElement, CardRootProps>(
             return (
                 <div
                     ref={ref as React.Ref<HTMLDivElement>}
-                    className={cn(baseClasses, surfaces({ className, glass, blur }))}
+                    className={cn(baseClasses, surfaces({ className, glass, blur, surface }))}
                     {...props}
                 />
             )
@@ -27,7 +27,7 @@ const CardRoot = forwardRef<HTMLDivElement | HTMLAnchorElement, CardRootProps>(
             <Link
                 ref={ref as React.Ref<HTMLAnchorElement>}
                 href={href}
-                className={cn(baseClasses, "block [&_h3]:text-primary", surfaces({ className, glass, blur }))}
+                className={cn(baseClasses, "block [&_h3]:text-primary", surfaces({ className, glass, blur, surface }))}
                 {...props}
             />
         )

@@ -10,57 +10,39 @@ type ProductShowcaseProps = React.ComponentProps<typeof Product.Root> & React.Co
 
 export function ProductShowcase({ product, className, ...props }: ProductShowcaseProps) {
     return (
-        <Card.Root
-            surface="main"
-            blur
-        >
-            <Product.Root
-                product={product}
-                {...props}
+        <section className="container mx-auto max-w-prose-wide">
+            <Card.Root
+                surface="main"
+                blur
+                className="flex flex-col md:flex-row md:-space-x-6"
             >
-                <Card.Content className="space-y-6">
-                    <Product.Figure title={product.title} />
-                    <Card.Title className="text-accent-content md:text-lg" />
-                </Card.Content>
-                <Card.Content>
-                    <Product.ColorSwatch className="md:h-10 md:w-10" />
-                    <Product.SizeSelect />
-                    <div className="flex w-full items-center justify-between">
-                        <Product.Variant />
-                        <Product.Price className="text-right" />
-                    </div>
-                    <Product.CartButton />
-                    <Product.Description text={product.descriptionHtml} />
-                </Card.Content>
-            </Product.Root>
-        </Card.Root>
+                <Product.Root
+                    product={product}
+                    {...props}
+                >
+                    <Card.Content className="space-y-6 md:max-w-prose-narrow -mb-6">
+                        <Product.Figure
+                            title={product.title}
+                            className="glass rounded-3xl"
+                        />
+                        <Card.Title className="text-accent max-md:text-left md:text-lg">
+                            {product.title}
+                        </Card.Title>
+                    </Card.Content>
+                    <Card.Content className="space-y-6">
+                        <Product.ColorSwatch className="p-2 -mx-2" />
+                        <Product.SizeSelect className="p-2 -mx-2" />
+                        <div className="flex w-full items-center justify-between">
+                            <Product.Variant />
+                            <Product.Price className="text-right" />
+                        </div>
+                        {/* <Product.CartButton /> */}
+                        <Product.Description
+                            text={product.descriptionHtml}
+                        />
+                    </Card.Content>
+                </Product.Root>
+            </Card.Root>
+        </section>
     )
 }
-
-// return (
-//     <section
-//         className={cn(
-//             `
-//             card bg-blur mx-auto max-w-lg gap-6 rounded-3xl bg-base-200/60 p-6
-//             lg:card-side md:gap-9 md:p-9 lg:max-w-7xl lg:gap-12 lg:p-12 [&>*]:basis-1/2
-//         `,
-//             className
-//         )}
-//         {...props}
-//     >
-//         <Card.Root
-//             surface="main"
-//             blur
-//         >
-//             <Product.Root product={product}>
-//                 <div className="space-y-6">
-//                     <Card.Figure
-//                         image={image}
-//                         title={product.title}
-//                     />
-//                     <Card.Title className="text-accent-content md:text-lg" />
-//                 </div>
-//             </Product.Root>
-//         </Card.Root>
-//     </section>
-// )
